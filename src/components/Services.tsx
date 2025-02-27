@@ -1,5 +1,4 @@
-
-
+// src/components/Services.tsx
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useState } from 'react';
@@ -30,25 +29,29 @@ const FloatingSVG = () => (
 const services = [
   {
     title: 'SISTEMA DE AGUA CONTRA INCENDIO',
-    description: 'Instalación, montaje y mantenimiento del cto. máquinas, red de rociadores, montante y sistema de gabinetes de agua contra incendio.',
+    description:
+      'Instalación, montaje y mantenimiento del cto. máquinas, red de rociadores, montante y sistema de gabinetes de agua contra incendio.',
     image: '/contra-incendio.jpg',
     icon: '💧',
   },
   {
     title: 'SISTEMA DE DETECCIÓN Y ALARMA CONTRA INCENDIO',
-    description: 'Instalación y mantenimiento de equipos de detección y alarmas contra incendio, con sistemas convencionales e inteligentes direccionables.',
+    description:
+      'Instalación y mantenimiento de equipos de detección y alarmas contra incendio, con sistemas convencionales e inteligentes direccionables.',
     image: '/alarma.jpg',
     icon: '🔥',
   },
   {
     title: 'SISTEMAS GENERALES DE BOMBEO',
-    description: 'Instalación, montaje y mantenimiento del cto. máquinas, sistema de presión constante, tanque elevado, bombas sumergibles y tableros controladores.',
+    description:
+      'Instalación, montaje y mantenimiento del cto. máquinas, sistema de presión constante, tanque elevado, bombas sumergibles y tableros controladores.',
     image: '/banner-bombeo.jpg',
     icon: '🚰',
   },
   {
     title: 'SISTEMA DE VENTILACIÓN MECÁNICA',
-    description: 'Instalación, montaje, mantenimiento y fabricación de ductería de ventilación mecánica, equipos centrífugos, axiales, helicocentrífugos, eólicos, etc.',
+    description:
+      'Instalación, montaje, mantenimiento y fabricación de ductería de ventilación mecánica, equipos centrífugos, axiales, helicocentrífugos, eólicos, etc.',
     image: '/ventilacion-banner.jpg',
     icon: '🌬️',
   },
@@ -96,7 +99,12 @@ const ServiceCard: React.FC<{
           className="absolute top-4 right-4 text-4xl"
           initial={{ scale: 0 }}
           animate={inView ? { scale: 1 } : {}}
-          transition={{ delay: index * 0.2 + 0.4, type: 'spring', stiffness: 260, damping: 20 }}
+          transition={{
+            delay: index * 0.2 + 0.4,
+            type: 'spring',
+            stiffness: 260,
+            damping: 20,
+          }}
         >
           {icon}
         </motion.div>
@@ -121,7 +129,7 @@ const ServiceCard: React.FC<{
               src={image}
               alt={title}
               className="max-w-full max-h-full object-contain"
-              onClick={(e) => e.stopPropagation()} // Evita que el modal se cierre al hacer clic en la imagen
+              onClick={(e) => e.stopPropagation()}
             />
             <button
               onClick={handleCloseImage}
@@ -137,9 +145,13 @@ const ServiceCard: React.FC<{
   );
 };
 
+/** Sección con id="servicios" para el ancla #servicios */
 const Services: React.FC = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-red-50 to-white relative overflow-hidden">
+    <section
+      id="servicios"
+      className="py-20 bg-gradient-to-b from-red-50 to-white relative overflow-hidden"
+    >
       <FloatingSVG />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -152,9 +164,9 @@ const Services: React.FC = () => {
             Nuestros Servicios
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto mt-4">
-            Como empresa con amplia experiencia en Proyectos de Inversión y pre inversión
-            a nivel nacional, en el sector público y privado en los rubros de Edificaciones,
-            Saneamiento e Industria ofrece lo siguiente:
+            Como empresa con amplia experiencia en Proyectos de Inversión y pre
+            inversión a nivel nacional, en el sector público y privado en los
+            rubros de Edificaciones, Saneamiento e Industria ofrece lo siguiente:
           </p>
         </motion.div>
 

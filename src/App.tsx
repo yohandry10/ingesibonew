@@ -1,34 +1,19 @@
-import React, { useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import MultipleServices from './components/MultipleServices';
-import Values from './components/Values';
-import AboutUs from './components/AboutUs';
-import WhyChooseUs from './components/WhyChooseUs';
-import Projects from './components/Projects';
-import Clients from './components/Clients';
-import Footer from './components/Footer';
+// src/App.tsx
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import AllProjects from './AllProjects';
 
 function App() {
-  useEffect(() => {
-    // Habilitar scroll suave
-    document.documentElement.style.scrollBehavior = 'smooth';
-  }, []);
-
   return (
-    <main className="min-h-screen bg-white">
-      <Navbar />
-      <Hero />
-      <Services />
-      <MultipleServices />
-      <Values />
-      <AboutUs />
-      <WhyChooseUs />
-      <Projects />
-      <Clients />
-      <Footer />
-    </main>
+    <BrowserRouter>
+      <Routes>
+        {/* Ruta principal */}
+        <Route path="/" element={<Home />} />
+        {/* Ruta de "Todos los Proyectos" */}
+        <Route path="/all-projects" element={<AllProjects />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

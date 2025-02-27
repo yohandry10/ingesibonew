@@ -1,4 +1,6 @@
+// src/components/Projects.tsx
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const projects = [
   {
@@ -41,7 +43,7 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        {/* Tarjetas de proyecto con contenedor de altura fija */}
+        {/* Tarjetas de proyecto */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
@@ -51,13 +53,11 @@ const Projects = () => {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="group relative overflow-hidden rounded-lg shadow-md"
             >
-              {/* Imagen con contenedor de altura fija */}
               <img
                 src={project.image}
                 alt={project.title}
                 className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"
               />
-              {/* Overlay con información */}
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-xl font-bold text-white">{project.title}</h3>
                 <p className="text-gray-200">{project.description}</p>
@@ -73,7 +73,10 @@ const Projects = () => {
             whileTap={{ scale: 0.95 }}
             className="bg-red-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-red-700 transition-colors"
           >
-            Ver Todos los Proyectos
+            {/* Aquí usamos Link de 'react-router-dom' */}
+            <Link to="/all-projects">
+              Ver Todos los Proyectos
+            </Link>
           </motion.button>
         </div>
       </div>

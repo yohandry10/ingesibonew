@@ -1,3 +1,4 @@
+// src/components/AboutUs.tsx
 import { motion } from 'framer-motion';
 
 const FloatingCircles = () => (
@@ -6,7 +7,7 @@ const FloatingCircles = () => (
     viewBox="0 0 200 200"
     xmlns="http://www.w3.org/2000/svg"
     animate={{ rotate: 360 }}
-    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+    transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
   >
     <motion.circle
       cx="50"
@@ -15,7 +16,7 @@ const FloatingCircles = () => (
       fill="#F87171"
       initial={{ scale: 0 }}
       animate={{ scale: [0.8, 1.2, 0.8] }}
-      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+      transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
     />
     <motion.circle
       cx="150"
@@ -24,7 +25,12 @@ const FloatingCircles = () => (
       fill="#DC2626"
       initial={{ scale: 0 }}
       animate={{ scale: [0.8, 1.2, 0.8] }}
-      transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+      transition={{
+        duration: 3.5,
+        repeat: Infinity,
+        ease: 'easeInOut',
+        delay: 0.5,
+      }}
     />
     <motion.circle
       cx="100"
@@ -33,14 +39,23 @@ const FloatingCircles = () => (
       fill="#F87171"
       initial={{ scale: 0 }}
       animate={{ scale: [0.8, 1.2, 0.8] }}
-      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: 'easeInOut',
+        delay: 1,
+      }}
     />
   </motion.svg>
 );
 
 const AboutUs = () => {
   return (
-    <section className="relative py-20 bg-gradient-to-b from-red-50 to-white overflow-hidden">
+    // id="sobre-nosotros"
+    <section
+      id="sobre-nosotros"
+      className="relative py-20 bg-gradient-to-b from-red-50 to-white overflow-hidden"
+    >
       <FloatingCircles />
       <div className="container mx-auto px-4 relative z-10 max-w-screen-xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -52,7 +67,7 @@ const AboutUs = () => {
           >
             <div className="text-center mb-10">
               <h2 className="text-5xl font-extrabold text-gray-900 mb-4">
-                Sobre{" "}
+                Sobre{' '}
                 <span className="bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
                   Nosotros
                 </span>
@@ -61,18 +76,18 @@ const AboutUs = () => {
             </div>
 
             <p className="text-gray-600 mb-6">
-              Como empresa con amplia experiencia en Proyectos de Inversión y pre inversión 
-              a nivel nacional, en el sector público y privado en los rubros de Edificaciones, 
-              Saneamiento e Industria, nos comprometemos a brindar servicios de excelente 
-              calidad acorde a las necesidades de nuestros clientes.
+              Como empresa con amplia experiencia en Proyectos de Inversión y pre
+              inversión a nivel nacional, en el sector público y privado en los
+              rubros de Edificaciones, Saneamiento e Industria, nos comprometemos
+              a brindar servicios de excelente calidad acorde a las necesidades de
+              nuestros clientes.
             </p>
             <p className="text-gray-600 mb-10">
-              Nuestro equipo está formado por profesionales altamente calificados, 
-              dedicados a ofrecer soluciones innovadoras y eficientes en cada proyecto 
-              que emprendemos.
+              Nuestro equipo está formado por profesionales altamente calificados,
+              dedicados a ofrecer soluciones innovadoras y eficientes en cada
+              proyecto que emprendemos.
             </p>
 
-            {/* Cards sin bordes adicionales */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
@@ -102,8 +117,12 @@ const AboutUs = () => {
                   className="relative p-6 bg-white overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <div className="text-red-600 text-2xl font-bold mb-2">{item.number}</div>
-                    <h3 className="text-xl font-bold mb-2 text-gray-900">{item.title}</h3>
+                    <div className="text-red-600 text-2xl font-bold mb-2">
+                      {item.number}
+                    </div>
+                    <h3 className="text-xl font-bold mb-2 text-gray-900">
+                      {item.title}
+                    </h3>
                     <p className="text-gray-600">{item.description}</p>
                   </div>
                 </motion.div>

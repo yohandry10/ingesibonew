@@ -21,7 +21,7 @@ const FloatingParticles = () => (
       initial={{ y: -10 }}
       animate={{ y: 10 }}
       transition={{
-        duration: 3,
+        duration: 3,  
         repeat: Infinity,
         repeatType: 'mirror',
         ease: 'easeInOut',
